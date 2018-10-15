@@ -28,6 +28,13 @@ This guide will walk you through setting up a practical config that will work on
 - [Set up key bindings](#keys)
 - [Set up the leader key](#leader)
 
+#### Moving forward
+
+- [Commit your config](#more)
+- [Share your config](#more)
+- [Learn more about Vim](#more)
+- [Look at other configs](#more)
+
 ## Install Vim and Neovim <a id='install'></a>
 
 > (Skip this step if you've already installed Vim.)
@@ -244,9 +251,19 @@ let g:mapleader=","
 
 > See: [Leaders](http://learnvimscriptthehardway.stevelosh.com/chapters/06.html) _(learnvimscriptthehardway.stevelosh.com)_
 
-## More to come!
+## More to come! <a id='more'></a>
 
 This guide is a work in progress, more stuff soon! But at this point you should have a working Vim config. Commit it, and share it!
+
+Here are some more resources to look at:
+
+- [mhinz/vim-galore](https://github.com/mhinz/vim-galore#readme) has a lot of tips on learning Vim.
+
+- [devhints.io/vim](http://devhints.io/vim) is a quick reference on Vim.
+
+- [Learn vimscript the hard way](http://learnvimscriptthehardway.stevelosh.com/) is a free book on Vim scripting.
+
+- [vim-galore plugins](https://github.com/mhinz/vim-galore/blob/master/PLUGINS.md) is a curated list of common Vim plugins.
 
 > Icon from [Thenounproject.com](https://thenounproject.com/search/?q=code&i=995778)
 
