@@ -5,15 +5,34 @@
 <h1 align='center'>Vim from scratch</h1>
 
 <p align='center'>
-Rico's guide to setting up Vim for<br>
-everyday development
+<em>Rico's guide to setting up Vim for<br> everyday development</em>
 </p>
 
 <br>
 
-## Install vim or neovim
+This guide will walk you through setting up a practical config that will work on both Vim and Neovim.
 
-There are many ways to acquire Vim. I suggest using [Neovim], a fork of Vim with extra features--but regular [Vim] would work just fine. This guide will set up a configuration that will work on both Vim and Neovim.
+#### Getting started
+
+- [Install Vim and Neovim](#install)
+- [Back up your existing config](#backup)
+- [Create ~/.vim](#vimpath)
+- [Create your .vimrc](#vimrc)
+- [Set up symlinks](#symlinks)
+
+#### Customizations
+
+- [Add vim-plug](#vim-plug)
+- [Set up plugins](#plugins)
+- [Set up additional options](#options)
+- [Set up key bindings](#keys)
+- [Set up the leader key](#leader)
+
+## Install Vim and Neovim <a id='install'></a>
+
+> (Skip this step if you've already installed Vim.)
+
+There are many ways to acquire Vim. I suggest using [Neovim], a fork of Vim with extra features--but regular [Vim] would work just fine.
 
 - **Vim on Linux** &mdash; most distributions come with `vim` and `neovim` packages. Some distributions have different versions available. When in doubt, pick the `vim-gnome` or `vim-gtk3` or `gvim` package.
 
@@ -41,7 +60,19 @@ There are many ways to acquire Vim. I suggest using [Neovim], a fork of Vim with
   brew install macvim --with-cscope --with-lua --override-system-vim --with-luajit --with-python3
   ```
 
-## Create your ~/.vim
+## Back up your existing Vim config <a id='backup'></a>
+
+> (Skip this step if you're setting up a fresh installation of Vim.)
+
+Want to try out this guide, but you already have Vim set up? You can rename them for now, and restore it later on.
+
+```bash
+mv ~/.vimrc ~/.vimrc~
+mv ~/.vim ~/.vim~
+mv ~/.config/nvim ~/.config/nvim~
+```
+
+## Create your ~/.vim <a id='vimpath'></a>
 
 The first obvious step is to create your config folder. Vim expects this in `~/.vim`, and Neovim expects it in `~/.config/nvim`. Either way, I suggest keeping it in _~/.vim_ and symlinking it as needed.
 
@@ -54,7 +85,7 @@ git init
 git commit -m "Initial commit" --allow-empty
 ```
 
-## Create your init.vim (aka .vimrc)
+## Create your init.vim (aka .vimrc) <a id='vimrc'></a>
 
 Vim looks for your config in `~/.vimrc`, and Neovim looks for it in `~/.config/nvim/init.vim`. Let's create the file as `~/.vim/init.vim`, which we will symlink to the proper locations later.
 
@@ -63,7 +94,7 @@ cd ~/.vim
 touch init.vim
 ```
 
-## Set up symlinks
+## Set up symlinks <a id='symlinks'></a>
 
 My preferred method is to create a `Makefile` which will set up symlinks as necessary. In `~/.vim`, create a file called `Makefile` and add this in:
 
@@ -88,7 +119,7 @@ cd ~/.vim
 make link
 ```
 
-## Install vim-plug
+## Install vim-plug <a id='vim-plug'></a>
 
 I recommend [vim-plug] as a plugin manager. This command will download `plug.vim` into your Vim config path:
 
@@ -126,7 +157,7 @@ Save it, load it, then call PlugInstall.
 
 > See: [vim-plug usage](https://github.com/junegunn/vim-plug#usage) _(github.com)_
 
-## Install plugins
+## Install plugins <a id='plugins'></a>
 
 The config above will install 2 plugins. Both are optional, but I recommend them:
 
@@ -151,7 +182,7 @@ Plug 'w0rp/ale'
 Plug 'tpope/vim-sleuth'
 ```
 
-## Set up additional config
+## Set up additional options <a id='options'></a>
 
 Our config so far has _vim-sensible_ and _vim-opinion_, which has some great defaults. You may want to add more settings. Instead of dumping them into `~/.vimrc`, I suggest adding them to your [after-directory] instead. This will keep your `~/.vimrc` as clean as possible.
 
@@ -173,9 +204,9 @@ set nonumber
 set wig+=vendor,log,logs
 ```
 
-> See: [Keep your vimrc clean](http://vim.wikia.com/wiki/Keep_your_vimrc_file_clean) _(vim.wikia.com)_, [~/.vim/after](http://learnvimscriptthehardway.stevelosh.com/chapters/42.html#vimafter) _(learnvimscriptthehardway.stevelosh.com)_
+> See: [Keep your vimrc clean](http://vim.wikia.com/wiki/Keep*your_vimrc_file_clean) \*(vim.wikia.com)_, [~/.vim/after](http://learnvimscriptthehardway.stevelosh.com/chapters/42.html#vimafter) _(learnvimscriptthehardway.stevelosh.com)\_
 
-## Set up additional key bindings
+## Set up additional key bindings <a id='keys'></a>
 
 I suggest keeping most (all?) of your key bindings in one file in your _after-directory_. I prefer to keep them in `~/.vim/after/plugin/key_bindings.vim`. This way, you can
 
@@ -202,7 +233,7 @@ nnoremap <leader>feo :cd ~/.vim;<CR>:e ~/.vim/after/plugin/options.vim<CR>
 
 The `leader` keymaps at the end can be triggered with the _Spacebar_ as the leader key. For instance, the first one is `SPACE` `f` `e` `d`. These are inspired by Spacemacs.
 
-## Change your leader key
+## Change your leader key <a id='leader'></a>
 
 The default `init.vim` above has a `g:mapleader` setting of spacebar. This is a great default that a lot of people use! I personally prefer the `,` key as a Dvorak user, but this is totally up to you. Common leader keys are `<space>`, `<cr>`, `<bs>`, `-` and `,`.
 
