@@ -1,3 +1,7 @@
+<p align='center'>
+<br><img src='https://user-images.githubusercontent.com/74385/46930533-c84de080-d078-11e8-8b8a-24945201be94.png' width='256'><br>
+</p>
+
 <h1 align='center'>Vim from scratch</h1>
 
 <p align='center'>
@@ -5,11 +9,13 @@ Rico's guide to setting up Vim for<br>
 everyday development
 </p>
 
+<br>
+
 ## Install vim or neovim
 
 There are many ways to acquire Vim. I suggest using [Neovim], a fork of Vim with extra features--but regular [Vim] would work just fine. This guide will set up a configuration that will work on both Vim and Neovim.
 
-- **On Linux** &bash; most distributions come with `vim` and `neovim` packages. Some distributions have different versions available.
+- **On Linux** &mdash; most distributions come with `vim` and `neovim` packages. Some distributions have different versions available. When in doubt, pick the `vim-gnome` or `vim-gtk3` or `gvim` package.
 
 - **Neovim on MacOS** &mdash; the `neovim` package is available in [Homebrew].
 
@@ -198,6 +204,8 @@ See: [Leaders](http://learnvimscriptthehardway.stevelosh.com/chapters/06.html) _
 ## More to come!
 
 This guide is a work in progress, more stuff soon! But at this point you should have a working Vim config. Commit it, and share it!
+
+> Icon from [Thenounproject.com](https://thenounproject.com/search/?q=code&i=995778)
 
 [homebrew]: https://brew.sh/
 [macvim]: http://macvim-dev.github.io/macvim/
