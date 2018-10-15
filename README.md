@@ -36,7 +36,7 @@ There are many ways to acquire Vim. I suggest using [Neovim], a fork of Vim with
 
 ## Create your ~/.vim
 
-The first obvious step is to create your config folder. Vim expects this in `~/.vim`, and Neovim expects it in `~/.config/nvim`. Either way, I suggest keeping it in `~/.vim` and symlinking it as needed.
+The first obvious step is to create your config folder. Vim expects this in `~/.vim`, and Neovim expects it in `~/.config/nvim`. Either way, I suggest keeping it in _~/.vim_ and symlinking it as needed.
 
 ```sh
 mkdir -p ~/.vim
@@ -56,7 +56,7 @@ cd ~/.vim
 touch init.vim
 ```
 
-### Set up symlinks
+## Set up symlinks
 
 My preferred method is to create a `Makefile` which will set up symlinks as necessary. In `~/.vim`, create a file called `Makefile` and add this in:
 
@@ -204,7 +204,7 @@ The default `init.vim` above has a `g:mapleader` setting of spacebar. This is a 
 let g:mapleader=","
 ```
 
-See: [Leaders](http://learnvimscriptthehardway.stevelosh.com/chapters/06.html) _(learnvimscriptthehardway.stevelosh.com)_
+> See: [Leaders](http://learnvimscriptthehardway.stevelosh.com/chapters/06.html) _(learnvimscriptthehardway.stevelosh.com)_
 
 ## More to come!
 
