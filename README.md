@@ -41,27 +41,27 @@ This guide will walk you through setting up a practical config that will work on
 
 There are many ways to acquire Vim. I suggest using [Neovim], a fork of Vim with extra features--but regular [Vim] would work just fine.
 
-- **Vim on Linux** &mdash; most distributions come with `vim` and `neovim` packages. Some distributions have different versions available. When in doubt, pick the `vim-gnome` or `vim-gtk3` or `gvim` package.
+- **Vim on Linux** <br> Most distributions come with `vim` and `neovim` packages. Some distributions have different versions available. When in doubt, pick the `vim-gnome` or `vim-gtk3` or `gvim` package.
 
   ```bash
   sudo pacman -S gvim         # Arch Linux
   sudo apt install vim-gnome  # Ubuntu
   ```
 
-- **Neovim on Linux** &mdash; If your distro ships with python-neovim, add it in too.
+- **Neovim on Linux** <br> If your distro ships with python-neovim, add it in too.
 
   ```bash
   sudo pacman -S neovim python-neovim
   ```
 
-- **Neovim on MacOS** &mdash; the `neovim` package is available in [Homebrew].
+- **Neovim on MacOS** <br> The `neovim` package is available in [Homebrew].
 
   ```bash
   brew install neovim
   # (todo: add more notes on python integration etc)
   ```
 
-- **Vim on MacOS** &mdash; I recommend using [Macvim] with installed via [Homebrew] with `--override-system-vim`. This gets you a more updated version of Vim than if you used the `vim` package. You'll also get a GUI app, which can be nice.
+- **Vim on MacOS** <br> I recommend using [Macvim] with installed via [Homebrew] with `--override-system-vim`. This gets you a more updated version of Vim than if you used the `vim` package. You'll also get a GUI app, which can be nice.
 
   ```bash
   brew install macvim --with-cscope --with-lua --override-system-vim --with-luajit --with-python3
