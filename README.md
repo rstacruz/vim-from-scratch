@@ -168,34 +168,44 @@ Save it, load it, then call PlugInstall.
 
 The config above will install 2 plugins. Both are optional, but I recommend them:
 
-- [tpope/vim-sensible][vim-sensible] enables some good "sensible" defaults, such as turning on syntax highlighting. This is superfluous in some vim forks like Neovim and [Oni], so I suggest to conditionally load it only when needed.
+- [**vim-sensible**] enables some good "sensible" defaults, such as turning on syntax highlighting. This is superfluous in some vim forks like Neovim and [Oni], so I suggest to conditionally load it only when needed.
 
-- [rstacruz/vim-opinion][vim-opinion] enables some good "opinionated" defaults that I prefer (I'm the author of this plugin!). This has some settings that I think will do well for most setups, such as [incremental search] and so on.
+  ```vim
+  if !has('nvim') && !exists('g:gui_oni') | Plug 'tpope/vim-sensible' | endif
+  ```
 
-Apart from these plugins, feel free to add them. Here are some more that I can recommend:
+- [**vim-opinion**] enables some good "opinionated" defaults that I prefer (I'm the author of this plugin!). This has some settings that I think will do well for most setups, such as [incremental search] and so on.
 
-```vim
-" File view sidebar
-Plug 'scrooloose/nerdtree'
+  ```vim
+  Plug 'rstacruz/vim-opinion'
+  ```
 
-" File picker
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Apart from these plugins, feel free to add them. Here are some more that I can recommend to almost every developer:
 
-" Linter and formatter for many filetypes
-Plug 'w0rp/ale'
+- [**fzf**](https://github.com/junegunn/fzf) is a very fast file picker. I recommend this over alternatives like ctrlp.vim.
 
-" Auto-infer tab sizes for projects
-Plug 'tpope/vim-sleuth'
+  ```vim
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
+  ```
 
-" Language support for every language imaginable
-Plug 'sheerun/vim-polyglot'
-```
+- [**ale**](https://github.com/w0rp/ale) verifies your files for syntax errors.
 
-- [junegunn/fzf](https://github.com/junegunn/fzf) is a very fast file picker. I recommend this over alternatives like ctrlp.vim.
-- [w0rp/ale](https://github.com/w0rp/ale) verifies your files for syntax errors.
-- [tpope/vim-sleuth](https://github.com/tpope/vim-sleuth) auto-detects if files use space or tabs, and how many spaces each file should have.
-- [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot) adds automatic language support for every language that Vim can support through 3rd party plugins.
+  ```vim
+  Plug 'w0rp/ale'
+  ```
+
+- [**vim-sleuth**](https://github.com/tpope/vim-sleuth) auto-detects if files use space or tabs, and how many spaces each file should have.
+
+  ```vim
+  Plug 'tpope/vim-sleuth'
+  ```
+
+- [**vim-polyglot**](https://github.com/sheerun/vim-polyglot) adds automatic language support for every language that Vim can support through 3rd party plugins.
+
+  ```vim
+  Plug 'sheerun/vim-polyglot'
+  ```
 
 ## Set up additional options <a id='options'></a>
 
