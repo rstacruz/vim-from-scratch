@@ -168,13 +168,13 @@ Save it, load it, then call PlugInstall.
 
 The config above will install 2 plugins. Both are optional, but I recommend them:
 
-- [**vim-sensible**] enables some good "sensible" defaults, such as turning on syntax highlighting. This is superfluous in some vim forks like Neovim and [Oni], so I suggest to conditionally load it only when needed.
+- [**vim-sensible**](https://github.com/tpope/vim-sensible) enables some good "sensible" defaults, such as turning on syntax highlighting. This is superfluous in some vim forks like Neovim and [Oni], so I suggest to conditionally load it only when needed.
 
   ```vim
   if !has('nvim') && !exists('g:gui_oni') | Plug 'tpope/vim-sensible' | endif
   ```
 
-- [**vim-opinion**] enables some good "opinionated" defaults that I prefer (I'm the author of this plugin!). This has some settings that I think will do well for most setups, such as [incremental search] and so on.
+- [**vim-opinion**](https://github.com/rstacruz/vim-opinion) enables some good "opinionated" defaults that I prefer (I'm the author of this plugin!). This has some settings that I think will do well for most setups, such as [incremental search] and so on.
 
   ```vim
   Plug 'rstacruz/vim-opinion'
