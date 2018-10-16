@@ -1,5 +1,5 @@
 <p align='center'>
-<br><img src='https://user-images.githubusercontent.com/74385/46930533-c84de080-d078-11e8-8b8a-24945201be94.png' width='256'><br>
+<br><img src='https://user-images.githubusercontent.com/74385/46930533-c84de080-d078-11e8-8b8a-24945201be94.png' width='192'><br>
 </p>
 
 <h1 align='center'>Vim from scratch</h1>
@@ -168,9 +168,9 @@ Save it, load it, then call PlugInstall.
 
 The config above will install 2 plugins. Both are optional, but I recommend them:
 
-- [vim-sensible] enables some good "sensible" defaults, such as turning on syntax highlighting. This is superfluous in some vim forks like Neovim and [Oni], so I suggest to conditionally load it only when needed.
+- [tpope/vim-sensible][vim-sensible] enables some good "sensible" defaults, such as turning on syntax highlighting. This is superfluous in some vim forks like Neovim and [Oni], so I suggest to conditionally load it only when needed.
 
-- [vim-opinion] enables some good "opinionated" defaults that I prefer (I'm the author of this plugin!). This has some settings that I think will do well for most setups, such as [incremental search] and so on.
+- [rstacruz/vim-opinion][vim-opinion] enables some good "opinionated" defaults that I prefer (I'm the author of this plugin!). This has some settings that I think will do well for most setups, such as [incremental search] and so on.
 
 Apart from these plugins, feel free to add them. Here are some more that I can recommend:
 
@@ -187,7 +187,15 @@ Plug 'w0rp/ale'
 
 " Auto-infer tab sizes for projects
 Plug 'tpope/vim-sleuth'
+
+" Language support for every language imaginable
+Plug 'sheerun/vim-polyglot'
 ```
+
+- [junegunn/fzf](https://github.com/junegunn/fzf) is a very fast file picker. I recommend this over alternatives like ctrlp.vim.
+- [w0rp/ale](https://github.com/w0rp/ale) verifies your files for syntax errors.
+- [tpope/vim-sleuth](https://github.com/tpope/vim-sleuth) auto-detects if files use space or tabs, and how many spaces each file should have.
+- [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot) adds automatic language support for every language that Vim can support through 3rd party plugins.
 
 ## Set up additional options <a id='options'></a>
 
