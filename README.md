@@ -128,11 +128,11 @@ make link
 
 ## Install vim-plug <a id='vim-plug'></a>
 
-I recommend [vim-plug] as a plugin manager. This command will download `plug.vim` into your Vim config path:
+[**vim-plug**][vim-plug] is the plugin manager I can recommend the most. It's ridiculously fast, and supports a lot of great features. This command will download `plug.vim` into your Vim config path:
 
 ```bash
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 Edit your config file by doing `vim ~/.vim/init.vim`. Add the following:
@@ -149,7 +149,7 @@ Plug 'rstacruz/vim-opinion'
 call plug#end()
 ```
 
-Save it, load it, then call PlugInstall.
+Save it, load it, then call _PlugInstall_.
 
 ```vim
 " Save the file
@@ -168,17 +168,19 @@ Save it, load it, then call PlugInstall.
 
 The config above will install 2 plugins. Both are optional, but I recommend them:
 
-- [**vim-sensible**](https://github.com/tpope/vim-sensible) enables some good "sensible" defaults, such as turning on syntax highlighting. This is superfluous in some vim forks like Neovim and [Oni], so I suggest to conditionally load it only when needed.
+- [**vim-sensible**](https://github.com/tpope/vim-sensible) enables some good "sensible" defaults, such as turning on syntax highlighting. This is superfluous in some vim forks like Neovim so I suggest to conditionally load it only when needed.
 
   ```vim
   if !has('nvim') && !exists('g:gui_oni') | Plug 'tpope/vim-sensible' | endif
   ```
 
-- [**vim-opinion**](https://github.com/rstacruz/vim-opinion) enables some good "opinionated" defaults that I prefer (I'm the author of this plugin!). This has some settings that I think will do well for most setups, such as [incremental search] and so on.
+- [**vim-opinion**](https://github.com/rstacruz/vim-opinion) enables some good "opinionated" defaults that I prefer (I'm the author of this plugin!). This has some settings that I think will do well for most setups, such as incremental search and so on.
 
   ```vim
   Plug 'rstacruz/vim-opinion'
   ```
+
+### More plugins
 
 Apart from these plugins, feel free to add them. Here are some more that I can recommend to almost every developer:
 
@@ -209,14 +211,14 @@ Apart from these plugins, feel free to add them. Here are some more that I can r
 
 ## Set up additional options <a id='options'></a>
 
-Our config so far has _vim-sensible_ and _vim-opinion_, which has some great defaults. You may want to add more settings. Instead of dumping them into `~/.vimrc`, I suggest adding them to your [after-directory] instead. This will keep your `~/.vimrc` as clean as possible.
+Our config so far has _vim-sensible_ and _vim-opinion_, which has some great defaults. You may want to add more settings. Instead of dumping them into `~/.vimrc`, I suggest adding them to your [after-directory] instead. This will keep your config file as clean as possible.
 
 ```bash
 mkdir -p ~/.vim/after/plugin
 vim ~/.vim/after/plugin/options.vim
 ```
 
-Here are some stuff you can add. _All of these are optional_.
+Here are some stuff you can add. All of these are optional.
 
 ```vim
 " Enable 256-color by default in the terminal
@@ -229,7 +231,9 @@ set nonumber
 set wig+=vendor,log,logs
 ```
 
-> See: [Keep your vimrc clean](http://vim.wikia.com/wiki/Keep*your_vimrc_file_clean) \*(vim.wikia.com)_, [~/.vim/after](http://learnvimscriptthehardway.stevelosh.com/chapters/42.html#vimafter) _(learnvimscriptthehardway.stevelosh.com)\_
+> See: [Keep your vimrc clean](http://vim.wikia.com/wiki/Keep_your_vimrc_file_clean) _(vim.wikia.com)_, [~/.vim/after](http://learnvimscriptthehardway.stevelosh.com/chapters/42.html#vimafter) \_(learnvimscriptthehardway.stevelosh.com)\_
+
+[after-directory]: http://learnvimscriptthehardway.stevelosh.com/chapters/42.html#vimafter
 
 ## Set up additional key bindings <a id='keys'></a>
 
@@ -292,5 +296,3 @@ Here are some more resources to look at:
 [vim-plug]: https://github.com/junegunn/vim-plug
 [vim-sensible]: https://github.com/tpope/vim-sensible
 [vim-opinion]: https://github.com/tpope/vim-sensible
-[oni]: https://www.onivim.io/
-[incremental search]: #
