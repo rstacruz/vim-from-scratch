@@ -10,7 +10,7 @@
 
 <br>
 
-This guide will walk you through setting up a practical config that will work on both Vim and Neovim.
+This guide will walk you through setting up a practical config that will work on [Vim], [Neovim], [Macvim], and any other Vim implementation out there.
 
 #### Getting started
 
@@ -27,6 +27,12 @@ This guide will walk you through setting up a practical config that will work on
 - [Set up additional options](#options)
 - [Set up key bindings](#keys)
 - [Set up the leader key](#leader)
+
+#### Interoperability
+
+- [With GUI Vim apps](#gui)
+- [Between Vim and Neovim](#vim-and-neovim)
+- [With Oni](#oni)
 
 #### Moving forward
 
@@ -81,7 +87,7 @@ mv ~/.config/nvim ~/.config/nvim~
 
 ## Create your ~/.vim <a id='vimpath'></a>
 
-The first obvious step is to create your config folder. Vim expects this in `~/.vim`, and Neovim expects it in `~/.config/nvim`. Either way, I suggest keeping it in _~/.vim_ and symlinking it as needed.
+The first obvious step is to create your config folder. Vim expects this in `~/.vim`, and Neovim expects it in `~/.config/nvim`. Since our goal is to make a Vim config that'll work everywhere, I suggest keeping it in _~/.vim_ and symlinking it as needed.
 
 ```sh
 mkdir -p ~/.vim
@@ -182,7 +188,7 @@ The config above will install 2 plugins. Both are optional, but I recommend them
 
 ### More plugins
 
-Apart from these plugins, feel free to add them. Here are some more that I can recommend to almost every developer:
+Here are some more that I can recommend to almost every developer:
 
 - [**fzf**](https://github.com/junegunn/fzf) is a very fast file picker. I recommend this over alternatives like ctrlp.vim.
 
@@ -273,6 +279,38 @@ let g:mapleader=","
 
 > See: [Leaders](http://learnvimscriptthehardway.stevelosh.com/chapters/06.html) _(learnvimscriptthehardway.stevelosh.com)_
 
+## Interoperability with GUI Vim apps <a id='gui'></a>
+
+There are many Vim GUI apps available today. Some popular ones include [Macvim], [VimR], vim-gtk and more are probably coming out everyday.
+
+There are some settings you might only want to use on GUI. You can use `if has('gui_running')` to conditionally only apply settings when running in a GUI.
+
+Like most settings, I suggest placing them in the after-directory, eg, `~/.vim/after/plugin/theme.vim`. Here's an example that sets fonts for GUIs:
+
+```vim
+" ~/.vim/after/plugin/theme.vim
+
+if has('gui_running')
+  " Settings for when running in a GUI
+  set transparency=0
+  set guifont=Iosevka\ Medium:h16 linespace=-1
+  set guioptions+=gme " gray menu items, menu bar, gui tabs
+  set antialias
+  color ir_black+
+else
+  " Settings for when running in the console
+  color base16
+endif
+```
+
+## Interoperability between Vim and Neovim <a id='vim-and-neovim'></a>
+
+> TODO: talk about `has('nvim')`, config paths, etc
+
+## Interoperability with Oni <a id='oni'></a>
+
+> TODO: talk about `exists('g:gui_oni')`
+
 ## More to come! <a id='more'></a>
 
 This guide is a work in progress, more stuff soon! But at this point you should have a working Vim config. Commit it, and share it!
@@ -296,3 +334,4 @@ Here are some more resources to look at:
 [vim-plug]: https://github.com/junegunn/vim-plug
 [vim-sensible]: https://github.com/tpope/vim-sensible
 [vim-opinion]: https://github.com/tpope/vim-sensible
+[vimr]: http://vimr.org/
