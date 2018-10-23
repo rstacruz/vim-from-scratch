@@ -155,16 +155,13 @@ Plug 'rstacruz/vim-opinion'
 call plug#end()
 ```
 
-Save it, load it, then call _PlugInstall_.
+Save it, restart Vim, then call _PlugInstall_.
 
 ```vim
-" Save the file
+" Save the file and exit vim
 :wq
 
-" Reload your config
-:source %
-
-" Install the plugins
+" Start vim again, then install the plugins
 :PlugInstall
 ```
 
