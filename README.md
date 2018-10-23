@@ -145,7 +145,7 @@ Edit your config file by doing `vim ~/.vim/init.vim`. Add the following:
 
 ```vim
 set nocompatible
-let g:mapleader="<space>"
+let g:mapleader=" "
 
 call plug#begin('~/.vim/vendor')
 
