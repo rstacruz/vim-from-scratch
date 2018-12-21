@@ -256,11 +256,11 @@ if exists(':FZF')
 endif
 
 " SPC-f-e-d to edit your config file
-nnoremap <leader>fed :cd ~/.vim;<CR>:e ~/.vim/init.vim<CR>
+nnoremap <leader>fed :cd ~/.vim<CR>:e ~/.vim/init.vim<CR>
 " SPC-f-e-k to edit your kepmap file
-nnoremap <leader>fek :cd ~/.vim;<CR>:e ~/.vim/after/plugin/key_bindings.vim<CR>
+nnoremap <leader>fek :cd ~/.vim<CR>:e ~/.vim/after/plugin/key_bindings.vim<CR>
 " SPC-f-e-o to edit your options file
-nnoremap <leader>feo :cd ~/.vim;<CR>:e ~/.vim/after/plugin/options.vim<CR>
+nnoremap <leader>feo :cd ~/.vim<CR>:e ~/.vim/after/plugin/options.vim<CR>
 ```
 
 The `leader` keymaps at the end can be triggered with the _Spacebar_ as the leader key. For instance, the first one is `SPACE` `f` `e` `d`. These are inspired by Spacemacs.
