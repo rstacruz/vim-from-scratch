@@ -116,9 +116,9 @@ My preferred method is to create a `Makefile` which will set up symlinks as nece
 pwd := $(shell pwd -LP)
 
 link:
-  @if [ ! . -ef ~/.vim ]; then ln -nfs "${pwd}" ~/.vim; fi
-  @if [ ! . -ef ~/.config/nvim ]; then ln -nfs "${pwd}" ~/.config/nvim; fi
-  @ln -nfs "${pwd}/init.vim" ~/.vimrc
+	@if [ ! . -ef ~/.vim ]; then ln -nfs "${pwd}" ~/.vim; fi
+	@if [ ! . -ef ~/.config/nvim ]; then ln -nfs "${pwd}" ~/.config/nvim; fi
+	@ln -nfs "${pwd}/init.vim" ~/.vimrc
 ```
 
 After creating it, just run `make link`. This should finally make your config available in both `~/.config/nvim/init.vim` and `~/.vimrc`.
