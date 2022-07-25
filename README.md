@@ -1,3 +1,5 @@
+> **Deprecated**: Thanks for checking my project! The guide below was made for older versions of Vim. Today, you can try [nvim-starter](https://github.com/rstacruz/nvim-starter) or [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) for Neovim.
+ 
 <p align='center'>
 <br><img src='https://user-images.githubusercontent.com/74385/46930533-c84de080-d078-11e8-8b8a-24945201be94.png' width='192'><br>
 </p>
